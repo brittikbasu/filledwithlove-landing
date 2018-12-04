@@ -1,16 +1,16 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import "../assets/app.css";
-import girlheart from "../assets/girlheart.png";
-import { Spring, config } from "react-spring";
+import '../assets/app.css';
+import girlheart from '../assets/girlheart.png';
+import { Spring, config } from 'react-spring';
 
 class Index extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title
-    const siteDescription = data.site.siteMetadata.description
+    const siteTitle = data.site.siteMetadata.title;
+    const siteDescription = data.site.siteMetadata.description;
 
     return (
       <React.Fragment>
@@ -22,12 +22,17 @@ class Index extends React.Component {
         <div>
           <Spring
             config={config.gentle}
-            from={{ opacity: 0, marginTop: "0vh" }}
-            to={{ opacity: 1, marginTop: "15vh" }}
+            from={{ opacity: 0, marginTop: '0vh' }}
+            to={{ opacity: 1, marginTop: '15vh' }}
           >
             {props => (
               <div className="logo" style={props}>
-                <h1>Filled With <span role="img" aria-label="heart">💜</span></h1>
+                <h1>
+                  Filled With{' '}
+                  <span role="img" aria-label="heart">
+                    💜
+                  </span>
+                </h1>
                 <p>A design agency for startups</p>
               </div>
             )}
@@ -41,9 +46,8 @@ class Index extends React.Component {
             )}
           </Spring>
         </div>
-
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -58,4 +62,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
