@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 export const StyledIndex = styled.div`
   .girlheart img{
     position: fixed;
-    bottom: -4px;
+    margin: 0;
     width: 100%;
   }
 
