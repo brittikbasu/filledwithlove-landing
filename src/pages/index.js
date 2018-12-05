@@ -1,10 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-
-import '../assets/app.css';
-import girlheart from '../assets/girlheart.png';
 import { Spring, config } from 'react-spring';
+
+import girlheart from '../assets/girlheart.png';
+import Logo from '../components/Logo';
+import { GlobalStyle, StyledIndex } from '../components/index-styles';
+
 
 class Index extends React.Component {
   render() {
@@ -13,7 +15,8 @@ class Index extends React.Component {
     const siteDescription = data.site.siteMetadata.description;
 
     return (
-      <React.Fragment>
+      <StyledIndex>
+        <GlobalStyle />
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -27,13 +30,12 @@ class Index extends React.Component {
           >
             {props => (
               <div className="logo" style={props}>
-                <h1>
-                  Filled With{' '}
-                  <span role="img" aria-label="heart">
-                    💜
-                  </span>
-                </h1>
-                <p>A design agency for startups</p>
+                <div>
+                  <Logo />
+                </div>
+                <div>
+                  <span>Filled</span><span>With</span><span>Love</span>
+                </div>
               </div>
             )}
           </Spring>
@@ -46,7 +48,7 @@ class Index extends React.Component {
             )}
           </Spring>
         </div>
-      </React.Fragment>
+      </StyledIndex>
     );
   }
 }
