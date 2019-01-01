@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Spring, config } from 'react-spring';
 
-import girlheart from '../assets/girlheart.png';
+import hero from '../assets/hero.png';
 import Logo from '../components/Logo';
 import { GlobalStyle, StyledIndex } from '../components/index-styles';
 
@@ -23,30 +23,23 @@ class Index extends React.Component {
           title={siteTitle}
         />
         <div>
-          <Spring
-            config={config.gentle}
-            from={{ opacity: 0, marginTop: '0vh' }}
-            to={{ opacity: 1, marginTop: '15vh' }}
-          >
-            {props => (
-              <div className="logo" style={props}>
-                <div>
-                  <Logo />
-                </div>
-                <div>
-                  <span>Filled</span><span>With</span><span>Love</span>
-                </div>
-              </div>
-            )}
-          </Spring>
+          <div className="logo">
+            <Logo />
+          </div>
 
-          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            {props => (
-              <div className="girlheart" style={props}>
-                <img src={girlheart} alt="girl with heart" />
-              </div>
-            )}
-          </Spring>
+          <h1>Filled with Love</h1>
+          <div className="subheading"><p>A design agency<br /> for startups</p></div>
+
+          <div style={{ textAlign: 'right', textAlign: '-webkit-right' }}>
+            <div className="hero-image">
+              <img src={hero} alt="A bunch of cool people working in filled with love design agency." />
+            </div>
+          </div>
+
+          <div className="summary"><p>
+            <span>We make epic brands, build </span><br />
+            <span>beautiful apps and create </span><br />
+            <span>awesome websites.</span></p></div>
         </div>
       </StyledIndex>
     );
@@ -57,11 +50,11 @@ export default Index;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
+          site {
+        siteMetadata {
+          title
         description
+        }
       }
     }
-  }
-`;
+  `;

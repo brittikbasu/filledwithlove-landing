@@ -2,11 +2,11 @@ import React from 'react';
 
 const Logo = () => {
   return (
-    <svg width="56px" viewBox="0 0 343 491" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+    <svg width="30px" viewBox="0 0 343 491" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
       <title>logo</title>
       <desc>Created with Sketch.</desc>
       <defs></defs>
-      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Artboard-1">
           <g id="Layer_1">
             <path d="M342.51,172.11 C342.522688,94.746173 290.627064,26.9966518 215.929805,6.8600832 C141.232546,-13.2764854 62.3159333,19.2092308 23.4418963,86.0969811 C-15.4321407,152.984731 -4.59298927,237.63499 49.88,292.57 L49.88,292.57 L170.27,413 L274.89,308.35 C317.521129,276.031493 342.548464,225.606707 342.51,172.11 L342.51,172.11 Z" id="Shape" fill="#552F72"></path>

@@ -1,15 +1,27 @@
 import Typography from 'typography';
-import Bootstrap from 'typography-theme-bootstrap';
 
-Bootstrap.overrideThemeStyles = () => ({
-  'a.gatsby-resp-image-link': {
-    boxShadow: 'none',
-  },
+const typography = new Typography({
+  baseFontSize: '14px',
+  baseLineHeight: 1.2,
+  headerFontFamily: [
+    'Aleo',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+  ],
+  bodyFontFamily: ['Aleo', 'serif'],
+  googleFonts: [
+    {
+      name: 'Aleo',
+      styles: [
+        '100',
+        '300',
+        '400',
+        '600'
+      ],
+    }
+  ]
 });
-
-// delete Bootstrap.googleFonts
-
-const typography = new Typography(Bootstrap);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {

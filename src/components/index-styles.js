@@ -1,47 +1,55 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import theme from '../utils/theme';
+import { rhythm, scale } from '../utils/typography';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+    color: ${theme.colors.text};
+    padding: ${rhythm(2)};
+    font-weight: 100;
+
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  h1, h2 {
     color: ${theme.colors.primary};
-    background: ${theme.colors.secondary};
-    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media (max-width: 555px) {
+    body {
+        overflow-x: hidden;
+      }
   }
 `
 
 export const StyledIndex = styled.div`
-  .girlheart img{
-    position: fixed;
-    margin: 0;
-    width: 100%;
-  }
-
   .logo {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      margin-right: 20px;
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      span {
-        font-weight: 800;
-        font-size: 1.8rem;
-        line-height: 2rem;
-      }
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin-bottom: 0px;
+  }
+  .subheading {
+    ${scale(0.8)}
+    line-height: 1.1;
+  }
+  .hero-image {
+    width: 400px;
+    margin-bottom: ${rhythm(2)};
+    img {
+      width: 100%;
+      height: auto;
     }
   }
+  .summary {
+    ${scale(0.6)}
+    color: ${theme.colors.primary};
+  }
 
-
-  @media (min-width: 555px) {
-    .girlheart img{
-      height: 70vh;
-      visibility: hidden;
+  @media (max-width: 555px) {
+    .hero-image {
+      margin-left: 30%;
     }
   }
 `;
